@@ -1,0 +1,369 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.app-header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.app-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Map Section */
+.map-section {
+  flex: 1;
+  position: relative;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Filter Panel */
+.filter-panel {
+  padding: 20px;
+  height: 100%;
+}
+
+.filter-header {
+  margin-bottom: 20px;
+}
+
+.filter-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.accident-count {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 8px 12px;
+  background: #e9ecef;
+  border-radius: 4px;
+}
+
+/* Filter Controls */
+.filter-controls {
+  margin-bottom: 30px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.filter-item:hover {
+  background-color: #f1f3f4;
+}
+
+.filter-item input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  margin-right: 12px;
+  position: relative;
+  background: white;
+  transition: all 0.2s;
+}
+
+.filter-item input[type="checkbox"]:checked + .checkbox-custom {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.filter-item input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.color-indicator.pedestrian {
+  background-color: #ff4444;
+}
+
+.color-indicator.bicycle {
+  background-color: #44ff44;
+}
+
+.color-indicator.other {
+  background-color: #4444ff;
+}
+
+/* Legend */
+.legend h4 {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.legend-color.pedestrian {
+  background-color: #ff4444;
+}
+
+.legend-color.bicycle {
+  background-color: #44ff44;
+}
+
+.legend-color.other {
+  background-color: #4444ff;
+}
+
+.legend-color.mixed {
+  background-color: #ff8800;
+}
+
+/* Popup Styles */
+.accident-popup h4 {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.accident-popup p {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.involvement-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-right: 4px;
+  margin-top: 4px;
+  color: white;
+}
+
+.involvement-badge.pedestrian {
+  background-color: #ff4444;
+}
+
+.involvement-badge.bicycle {
+  background-color: #44ff44;
+  color: #333;
+}
+
+.involvement-badge.motorcycle {
+  background-color: #8844ff;
+}
+
+/* Loading State */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.app-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+}
+
+.app-error h2 {
+  color: #d32f2f;
+  margin-bottom: 12px;
+}
+
+.app-error button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.app-error button:hover {
+  background: #5a67d8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .app-header p {
+    font-size: 0.85rem;
+  }
+  
+  .app-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    max-height: 30vh;
+    order: 2;
+    border-right: none;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .map-section {
+    order: 1;
+    height: 70vh;
+  }
+  
+  .filter-panel {
+    padding: 15px;
+  }
+  
+  .filter-controls {
+    margin-bottom: 20px;
+  }
+  
+  .filter-item {
+    margin-bottom: 8px;
+    padding: 6px;
+  }
+  
+  .legend {
+    display: none; /* Hide legend on mobile to save space */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 10px 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .filter-panel {
+    padding: 12px;
+  }
+  
+  .accident-count {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
