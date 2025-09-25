@@ -1,5 +1,5 @@
-import React from 'react';
-import { FilterState } from '../types/accident';
+import React from "react";
+import { FilterState } from "../types/accident";
 
 interface FilterComponentProps {
   filters: FilterState;
@@ -12,12 +12,12 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
   filters,
   onFilterChange,
   totalAccidents,
-  filteredCount
+  filteredCount,
 }) => {
   const handleFilterChange = (filterType: keyof FilterState) => {
     onFilterChange({
       ...filters,
-      [filterType]: !filters[filterType]
+      [filterType]: !filters[filterType],
     });
   };
 
@@ -26,16 +26,17 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
       <div className="filter-header">
         <h3>Accident Filters</h3>
         <div className="accident-count">
-          Showing {filteredCount.toLocaleString()} of {totalAccidents.toLocaleString()} accidents
+          Showing {filteredCount.toLocaleString()} of{" "}
+          {totalAccidents.toLocaleString()} accidents
         </div>
       </div>
-      
+
       <div className="filter-controls">
         <label className="filter-item">
           <input
             type="checkbox"
             checked={filters.showPedestrianAccidents}
-            onChange={() => handleFilterChange('showPedestrianAccidents')}
+            onChange={() => handleFilterChange("showPedestrianAccidents")}
           />
           <span className="checkbox-custom"></span>
           <span className="filter-label">
@@ -48,7 +49,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
           <input
             type="checkbox"
             checked={filters.showBicycleAccidents}
-            onChange={() => handleFilterChange('showBicycleAccidents')}
+            onChange={() => handleFilterChange("showBicycleAccidents")}
           />
           <span className="checkbox-custom"></span>
           <span className="filter-label">
@@ -61,7 +62,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
           <input
             type="checkbox"
             checked={filters.showOtherAccidents}
-            onChange={() => handleFilterChange('showOtherAccidents')}
+            onChange={() => handleFilterChange("showOtherAccidents")}
           />
           <span className="checkbox-custom"></span>
           <span className="filter-label">
