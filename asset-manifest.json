@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/OpenData/static/css/main.b8b46ed4.css",
-    "main.js": "/OpenData/static/js/main.85a67b52.js",
-    "static/js/453.6ddb9a11.chunk.js": "/OpenData/static/js/453.6ddb9a11.chunk.js",
-    "index.html": "/OpenData/index.html",
-    "main.b8b46ed4.css.map": "/OpenData/static/css/main.b8b46ed4.css.map",
-    "main.85a67b52.js.map": "/OpenData/static/js/main.85a67b52.js.map",
-    "453.6ddb9a11.chunk.js.map": "/OpenData/static/js/453.6ddb9a11.chunk.js.map"
+    "main.css": "/OpenData/zurich-accidents-viz/static/css/main.b8b46ed4.css",
+    "main.js": "/OpenData/zurich-accidents-viz/static/js/main.8c5284e9.js",
+    "static/js/453.6ddb9a11.chunk.js": "/OpenData/zurich-accidents-viz/static/js/453.6ddb9a11.chunk.js",
+    "index.html": "/OpenData/zurich-accidents-viz/index.html",
+    "main.b8b46ed4.css.map": "/OpenData/zurich-accidents-viz/static/css/main.b8b46ed4.css.map",
+    "main.8c5284e9.js.map": "/OpenData/zurich-accidents-viz/static/js/main.8c5284e9.js.map",
+    "453.6ddb9a11.chunk.js.map": "/OpenData/zurich-accidents-viz/static/js/453.6ddb9a11.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b8b46ed4.css",
-    "static/js/main.85a67b52.js"
+    "static/js/main.8c5284e9.js"
   ]
 }
